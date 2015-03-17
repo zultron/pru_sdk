@@ -1,4 +1,4 @@
-C_FILES := host_main.c ../common/mio.c
+C_FILES := host_main.c
 
 CLPRU = clpru
 CLPRU_ARGS = --silicon_version=2 --hardware_mac=on

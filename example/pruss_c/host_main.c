@@ -5,27 +5,9 @@
 #include <signal.h>
 #include "prussdrv.h"
 #include "pruss_intc_mapping.h"
-#include "../common/mio.h"
 
 
 /* host pru shared memory */
-
-static void zero_words(size_t n)
-{
-  mio_handle_t mio;
-  size_t i;
-
-  if (mio_open(&mio, 0x80001000, 0x1000))
-  {
-    printf("unable to zero_words\n");
-    return ;
-  }
-
-  for (i = 0; i != n; ++i)
-    mio_write_uint32(&mio, i * sizeof(uint32_t), 0);
-
-  mio_close(&mio);
-}
 
 static int read_words(uint32_t* x, size_t n)
 {
@@ -70,7 +52,6 @@ int main(int ac, char** av)
 
   prussdrv_pruintc_init(&pruss_intc_initdata);
 
-  /* zero_words(n); */
 
 #define PRU_NUM 0
 
