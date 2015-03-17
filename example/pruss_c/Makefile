@@ -39,3 +39,10 @@ data.bin text.bin: pru_main.elf
 	hexpru bin.cmd $<
 
 
+clean: pruss_c_example_clean
+
+pruss_c_example_clean:
+	rm -f pru_main.obj pru_hal.obj pru_main.elf pru_main.map
+	rm -f *.o main
+	rm -f text.bin data.bin
+
