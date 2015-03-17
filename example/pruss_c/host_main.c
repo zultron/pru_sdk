@@ -78,7 +78,7 @@ int main(int ac, char** av)
   prussdrv_load_datafile(PRU_NUM, "./data.bin");
 
   /* execute code on pru0 */
-  prussdrv_exec_program_at(PRU_NUM, "./text.bin", START_ADDR);
+  prussdrv_exec_program(PRU_NUM, "./text.bin");
 
   signal(SIGINT, on_sigint);
   while (is_sigint == 0)
