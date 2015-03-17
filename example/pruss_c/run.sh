@@ -1,4 +1,7 @@
-#!/usr/bin/env sh
+#!/bin/bash
+#
+# This program should be run as root
+#
 /sbin/modprobe uio_pruss
-echo pru_enable > /sys/devices/bone_capemgr.9/slots
+echo BB-BONE-PRU-01 > /sys/devices/bone_capemgr.9/slots
 ./main

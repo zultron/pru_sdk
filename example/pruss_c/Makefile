@@ -1,5 +1,4 @@
 C_FILES := host_main.c ../common/mio.c
-DTS_FILES := pru_enable-00A0.dts
 
 CLPRU = clpru
 CLPRU_ARGS = --silicon_version=2 --hardware_mac=on
